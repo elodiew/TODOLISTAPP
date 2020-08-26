@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "p8-elo",
+  "dependencies": {
+    "todomvc-common": "^1.0.1",
+    "todomvc-app-css": "^2.0.1"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.0.0",
+    "jsdoc": "^3.6.5"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "doc": "jsdoc -d docs --configure jsconf.json main.js"
+}
