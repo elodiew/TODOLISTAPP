@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>view.js - Documentation</title>
+    
+    
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="wrap">
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://todolistapp.elodie-devgirl.com/" target="_blank" class="menu-item" id="website_link" >Project Website</a></h2><h2><a href="https://github.com/elodiew/todo-list-app/wiki" target="_blank" class="menu-item" id="forum_link" >Wiki GitHub</a></h2><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Controller.html#_filter">_filter</a></li><li data-type='method' style='display: none;'><a href="Controller.html#_updateCount">_updateCount</a></li><li data-type='method' style='display: none;'><a href="Controller.html#_updateFilterState">_updateFilterState</a></li><li data-type='method' style='display: none;'><a href="Controller.html#addItem">addItem</a></li><li data-type='method' style='display: none;'><a href="Controller.html#editItem">editItem</a></li><li data-type='method' style='display: none;'><a href="Controller.html#editItemCancel">editItemCancel</a></li><li data-type='method' style='display: none;'><a href="Controller.html#editItemSave">editItemSave</a></li><li data-type='method' style='display: none;'><a href="Controller.html#removeCompletedItems">removeCompletedItems</a></li><li data-type='method' style='display: none;'><a href="Controller.html#removeItem">removeItem</a></li><li data-type='method' style='display: none;'><a href="Controller.html#setView">setView</a></li><li data-type='method' style='display: none;'><a href="Controller.html#showActive">showActive</a></li><li data-type='method' style='display: none;'><a href="Controller.html#showAll">showAll</a></li><li data-type='method' style='display: none;'><a href="Controller.html#showCompleted">showCompleted</a></li><li data-type='method' style='display: none;'><a href="Controller.html#toggleAll">toggleAll</a></li><li data-type='method' style='display: none;'><a href="Controller.html#toggleComplete">toggleComplete</a></li></ul></li><li><a href="Model.html">Model</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Model.html#create">create</a></li><li data-type='method' style='display: none;'><a href="Model.html#getCount">getCount</a></li><li data-type='method' style='display: none;'><a href="Model.html#read">read</a></li><li data-type='method' style='display: none;'><a href="Model.html#remove">remove</a></li><li data-type='method' style='display: none;'><a href="Model.html#removeAll">removeAll</a></li><li data-type='method' style='display: none;'><a href="Model.html#update">update</a></li></ul></li><li><a href="Store.html">Store</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Store.html#drop">drop</a></li><li data-type='method' style='display: none;'><a href="Store.html#find">find</a></li><li data-type='method' style='display: none;'><a href="Store.html#findAll">findAll</a></li><li data-type='method' style='display: none;'><a href="Store.html#remove">remove</a></li><li data-type='method' style='display: none;'><a href="Store.html#save">save</a></li></ul></li><li><a href="Template.html">Template</a><ul class='methods'><li data-type='method' style='display: none;'><a href="Template.html#clearCompletedButton">clearCompletedButton</a></li><li data-type='method' style='display: none;'><a href="Template.html#itemCounter">itemCounter</a></li><li data-type='method' style='display: none;'><a href="Template.html#show">show</a></li></ul></li><li><a href="View.html">View</a><ul class='methods'><li data-type='method' style='display: none;'><a href="View.html#_bindItemEditCancel">_bindItemEditCancel</a></li><li data-type='method' style='display: none;'><a href="View.html#_bindItemEditDone">_bindItemEditDone</a></li><li data-type='method' style='display: none;'><a href="View.html#_clearCompletedButton">_clearCompletedButton</a></li><li data-type='method' style='display: none;'><a href="View.html#_editItem">_editItem</a></li><li data-type='method' style='display: none;'><a href="View.html#_editItemDone">_editItemDone</a></li><li data-type='method' style='display: none;'><a href="View.html#_elementComplete">_elementComplete</a></li><li data-type='method' style='display: none;'><a href="View.html#_itemId">_itemId</a></li><li data-type='method' style='display: none;'><a href="View.html#_removeItem">_removeItem</a></li><li data-type='method' style='display: none;'><a href="View.html#_setFilter">_setFilter</a></li><li data-type='method' style='display: none;'><a href="View.html#bind">bind</a></li><li data-type='method' style='display: none;'><a href="View.html#render">render</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">view.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*global qs, qsa, $on, $parent, $delegate */
+
+(function (window) {
+	'use strict';
+	/** 
+	 * VIEW Définit les valeurs par défaut du template ainsi que les intéractions avec le DOM (touches du clavier et évènements)
+	 * @param {string} template template utilisé
+	 */
+	class View {
+		constructor(template) {
+			this.template = template;
+
+			this.ENTER_KEY = 13;
+			this.ESCAPE_KEY = 27;
+
+			this.$todoList = qs('.todo-list');
+			this.$todoItemCounter = qs('.todo-count');
+			this.$clearCompleted = qs('.clear-completed');
+			this.$main = qs('.main');
+			this.$footer = qs('.footer');
+			this.$toggleAll = qs('.toggle-all');
+			this.$newTodo = qs('.new-todo');
+		}
+
+		/** 
+		 * Supprime une tâche de la liste
+		 * @param {number} id L'id de la tâche à supprimer
+		 */
+		_removeItem(id) {
+			let elem = qs('[data-id="' + id + '"]');
+
+			if (elem) {
+				this.$todoList.removeChild(elem);
+			}
+		};
+
+		/** 
+		 * Affiche ou cache les éléments terminés
+		 * @param {number} completedCount Le nombre d'éléments terminés
+		 * @param {boolean} visible Les éléments sont-ils visibles ou non ?
+		 */
+		_clearCompletedButton(completedCount, visible) {
+			this.$clearCompleted.innerHTML = this.template.clearCompletedButton(completedCount);
+			this.$clearCompleted.style.display = visible ? 'block' : 'none';
+		};
+
+		/** 
+		 * Affiche ou cache les éléments terminés
+		 * @param {string} currentPage Le filtre appliqué : '' / active / completed
+		 */
+		_setFilter(currentPage) {
+			qs('.filters .selected').className = '';
+			qs('.filters [href="#/' + currentPage + '"]').className = 'selected';
+		};
+
+		/** 
+		 * Test si une tâche est terminée ou non
+		 * @param {number} id L'id de la tâche à tester
+		 * @param {boolean} completed La tâche est-elle terminée ou non ?
+		 */
+		_elementComplete(id, completed) {
+			let listItem = qs('[data-id="' + id + '"]');
+
+			// if (!listItem) {
+			// 	return;
+			// }
+
+			listItem.className = completed ? 'completed' : '';
+
+			// Dans le cas où il a été basculé à partir d'un événement et non en cliquant sur la case à cocher
+			qs('input', listItem).checked = completed;
+		};
+
+		/** 
+		 * Editer une tâche dans la liste (grâce au double click)
+		 * @param {number} id L'id de la tâche à éditer
+		 * @param {string} title Le nouveau titre de la tâche
+		 */
+		_editItem(id, title) {
+			let listItem = qs('[data-id="' + id + '"]');
+
+			// if (!listItem) {
+			// 	return;
+			// }
+
+			listItem.className = listItem.className + ' editing';
+
+			let input = document.createElement('input');
+			input.className = 'edit';
+
+			listItem.appendChild(input);
+			input.focus();
+			input.value = title;
+		};
+
+		/** 
+		 * Indique que l'édition d'une tâche est terminée
+		 * @param {number} id L'id de la tâche qui était en édition
+		 * @param {string} title Le nouveau titre de la tâche
+		 */
+		_editItemDone(id, title) {
+			let listItem = qs('[data-id="' + id + '"]');
+
+			// if (!listItem) {
+			// 	return;
+			// }
+
+			let input = qs('input.edit', listItem);
+			listItem.removeChild(input);
+
+			listItem.className = listItem.className.replace('editing', '');
+
+			qsa('label', listItem).forEach(function (label) {
+				label.textContent = title;
+			});
+		};
+
+		/** 
+		 * Indique que l'édition d'une tâche est terminée
+		 * @param {string} viewCmd La fonction active
+		 * @param {object} parameter Les paramètres actifs
+		 */
+		render(viewCmd, parameter) {
+			let self = this;
+			let viewCommands = {
+				showEntries: function () {
+					self.$todoList.innerHTML = self.template.show(parameter);
+				},
+				removeItem: function () {
+					self._removeItem(parameter);
+				},
+				updateElementCount: function () {
+					self.$todoItemCounter.innerHTML = self.template.itemCounter(parameter);
+				},
+				clearCompletedButton: function () {
+					self._clearCompletedButton(parameter.completed, parameter.visible);
+				},
+				contentBlockVisibility: function () {
+					self.$main.style.display = self.$footer.style.display = parameter.visible ? 'block' : 'none';
+				},
+				toggleAll: function () {
+					self.$toggleAll.checked = parameter.checked;
+				},
+				setFilter: function () {
+					self._setFilter(parameter);
+				},
+				clearNewTodo: function () {
+					self.$newTodo.value = '';
+				},
+				elementComplete: function () {
+					self._elementComplete(parameter.id, parameter.completed);
+				},
+				editItem: function () {
+					self._editItem(parameter.id, parameter.title);
+				},
+				editItemDone: function () {
+					self._editItemDone(parameter.id, parameter.title);
+				}
+			};
+
+			viewCommands[viewCmd]();
+		};
+
+		/** 
+		 * Définit les actions après l'édition d'une tâche
+		 * @param {element} element La tâche dont on cherche l'id
+		 * Return L'id de la tâche
+		 */
+		_itemId(element) {
+			let li = $parent(element, 'li');
+			return parseInt(li.dataset.id, 10);
+		};
+
+		/** 
+		 * Définit les actions après l'édition d'une tâche
+		 * @param {function} handler Fonction de rappel qui est exécutée lors de l'annulation de l'édition d'une tâche
+		 */
+		_bindItemEditDone(handler) {
+			let self = this;
+			$delegate(self.$todoList, 'li .edit', 'blur', function () {
+				if (!this.dataset.iscanceled) {
+					handler({
+						id: self._itemId(this),
+						title: this.value
+					});
+				}
+			});
+
+			$delegate(self.$todoList, 'li .edit', 'keypress', function (event) {
+				if (event.keyCode === self.ENTER_KEY) {
+					// Retirez le curseur de l'entrée lorsque vous appuyez sur Entrée, comme s'il 
+					// était une vraie forme
+					this.blur();
+				}
+			});
+		};
+
+		/** 
+		 * Définit les actions lorsque l'édition d'une tâche est annulée
+		 * @param {function} handler Fonction de rappel qui est exécutée lors de l'annulation de l'édition d'une tâche
+		 */
+		_bindItemEditCancel(handler) {
+			let self = this;
+			$delegate(self.$todoList, 'li .edit', 'keyup', function (event) {
+				if (event.keyCode === self.ESCAPE_KEY) {
+					this.dataset.iscanceled = true;
+					this.blur();
+
+					handler({
+						id: self._itemId(this)
+					});
+				}
+			});
+		};
+
+		/** 
+		 * Greffe des écouteurs d'évènements sur les tâches en fonction des actions de l'utilisateur, côté HTML
+		 * @param {string} event L'event choisi
+		 * @param {function} handler Fonctnion de rappel exécutée selon la situation
+		 */
+		bind(event, handler) {
+			let self = this;
+			// Amélioration
+			// Methode servant a binbder plusieur event: dans une logique d'amelioraztion, nous avons utiliser un traitement switch, qui est un peu plus maintenable et un peu plus lisible et plus performant.
+			switch (event) {
+				case 'newTodo':
+					$on(self.$newTodo, 'change', function () {
+						handler(self.$newTodo.value);
+					});
+					break;
+				case 'removeCompleted':
+					$on(self.$clearCompleted, 'click', function () {
+						handler();
+					});
+					break;
+				case 'toggleAll':
+					$on(self.$toggleAll, 'click', function () {
+						handler({
+							completed: this.checked
+						});
+					});
+					break;
+				case 'itemEdit':
+					$delegate(self.$todoList, 'li label', 'dblclick', function () {
+						handler({
+							id: self._itemId(this)
+						});
+					});
+					break;
+				case 'itemRemove':
+					$delegate(self.$todoList, '.destroy', 'click', function () {
+						handler({
+							id: self._itemId(this)
+						});
+					});
+					break;
+				case 'itemToggle':
+					$delegate(self.$todoList, '.toggle', 'click', function () {
+						handler({
+							id: self._itemId(this),
+							completed: this.checked
+						});
+					});
+					break;
+				case 'itemEditDone':
+					self._bindItemEditDone(handler);
+					break;
+
+				case 'itemEditCancel': {
+					self._bindItemEditCancel(handler);
+				}
+			}
+		};
+	};
+
+	// Export to window
+	window.app = window.app || {};
+	window.app.View = View;
+}(window));</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Thu Aug 27 2020 14:29:00 GMT+0200 (GMT+02:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

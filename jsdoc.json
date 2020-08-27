@@ -1,0 +1,76 @@
+{
+    "tags": {
+        "allowUnknownTags": false
+    },
+    "source": {
+        "include": ["../todo-list-app/js,", "./js"],
+        "includePattern": "\\.js$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "opts": {
+        "template": "node_modules/docdash",
+        "encoding": "utf8",
+        "destination": "docs/",
+        "recurse": true,
+        "verbose": true
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "docdash": {
+        "static": [true],
+        "sort": [true],
+        "sectionOrder": [
+            "Classes",
+            "Modules",
+            "Externals",
+            "Events",
+            "Namespaces",
+            "Mixins",
+            "Tutorials",
+            "Interfaces"
+        ],
+        "disqus": "",
+        "openGraph": {
+            "title": "",
+            "type": "website",
+            "image": "",
+            "site_name": "",
+            "url": ""
+        },
+        "meta": {
+            "title": "",
+            "description": "",
+            "keyword": ""
+        },
+        "search": true,
+        "collapse": true,
+        "wrap": true,
+        "typedefs": true,
+        "navLevel": 8,
+        "private": true,
+        "removeQuotes": "all",
+        "scripts": [],
+        "menu": {
+            "Project Website": {
+                "href": "https://todolistapp.elodie-devgirl.com/",
+                "target": "_blank",
+                "class": "menu-item",
+                "id": "website_link"
+            },
+            "Wiki GitHub": {
+                "href": "https://github.com/elodiew/todo-list-app/wiki",
+                "target": "_blank",
+                "class": "menu-item",
+                "id": "forum_link"
+            }
+        },
+        "scopeInOutputPath": true,
+        "nameInOutputPath": true,
+        "versionInOutputPath": true
+    }
+}

@@ -90,7 +90,7 @@
 
 		/** 
 		 * Affiche ou non le bouton "Clear Completed" (si pas de tâches terminées = pas de bouton)
-		 * @param  {[type]} completedTodos Le nombre de tâche complétées
+		 * @param  {Number} completedTodos Le nombre de tâche complétées
 		 * @returns {string} Chaîne contenant le nombre
 		 */
 		clearCompletedButton(completedTodos) {
