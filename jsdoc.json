@@ -47,7 +47,7 @@
             "description": "",
             "keyword": ""
         },
-        "search": true,
+        "search": false,
         "collapse": true,
         "wrap": true,
         "typedefs": true,
