@@ -7,20 +7,42 @@
     "todomvc-common": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.2",
     "jasmine-core": "^2.0.0",
-    "jsdoc": "^3.6.5"
+    "jsdoc": "^3.6.5",
+    "mini-css-extract-plugin": "^0.11.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
+    "doc": "docs",
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "generate-docs": "jsdoc -c jsdoc.json",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
-  "doc": "jsdoc -d docs --configure jsconf.json main.js"
+  "description": "P8-Openclassrooms - Reprenez et améliorez un projet existant",
+  "doc": "jsdoc -d docs --configure jsconf.json main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elodiew/todo-list-app.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/elodiew/todo-list-app/issues"
+  },
+  "homepage": "https://github.com/elodiew/todo-list-app#readme"
 }
