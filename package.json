@@ -30,7 +30,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-docs": "jsdoc -c jsdoc.json",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "webpack-dev-server": "webpack-dev-server",
+    "dev": "webpack-dev-server --mode=development",
+    "prod": "webpack --mode=production"
+
   },
   "author": "",
   "license": "ISC",

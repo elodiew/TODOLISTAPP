@@ -6,9 +6,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // This is the main configuration object.
 // Here you write different options and tell Webpack what to do
 module.exports = {
-
-    // Path to your entry point. From this file Webpack will begin his work
+    mode: process.env.NODE_ENV,
     entry: './src/javascript/app.js',
+
+
 
 
     // Path and filename of your result bundle.
@@ -20,55 +21,18 @@ module.exports = {
 
     module: {
         rules: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
-            },
-            {
-                test: /\.sc|ass$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader
+            test: /\.css$/,
+            use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '/assets/style/',
                     },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            importLoaders: 1
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                            config: {
-                                ctx: {
-                                    cssnano: {},
-                                    autoprefixer: {}
-                                }
-                            }
-                        }
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sourceMap: true // il est indispensable d'activer les sourcemaps pour que postcss fonctionne correctement
-                        }
-                    }
-                ]
-            },
-        ]
+                },
+                'css-loader',
+            ],
+        }, ]
     },
-    plugins: [
-
-        new MiniCssExtractPlugin({
-            filename: "bundle.css"
-        })
-
-    ],
-
-
-
+    plugins: [new MiniCssExtractPlugin()],
     // Default mode for Webpack is production.
     // Depending on mode Webpack will apply different things
     // on final bundle. For now we don't need production's JavaScript 
