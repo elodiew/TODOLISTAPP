@@ -8,6 +8,7 @@ require('../javascript/controller.js');
 require('../javascript/helpers.js');
 require('../javascript/app.js');
 
+
 (function () {
 	'use strict';
 
