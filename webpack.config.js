@@ -7,10 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // Here you write different options and tell Webpack what to do
 module.exports = {
     mode: process.env.NODE_ENV,
-    entry: './src/javascript/app.js',
-
-
-
+    entry: ["./src/javascript/app.js", "./dist/main.css", ],
 
     // Path and filename of your result bundle.
     // Webpack will bundle all JavaScript into this file
@@ -33,9 +30,6 @@ module.exports = {
         }, ]
     },
     plugins: [new MiniCssExtractPlugin()],
-    // Default mode for Webpack is production.
-    // Depending on mode Webpack will apply different things
-    // on final bundle. For now we don't need production's JavaScript 
-    // minifying and other thing so let's set mode to development
+
     mode: 'development'
 };

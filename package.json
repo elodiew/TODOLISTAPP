@@ -9,6 +9,7 @@
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
+    "@webpack-cli/serve": "^0.2.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.2",
     "jasmine-core": "^2.0.0",
@@ -31,10 +32,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-docs": "jsdoc -c jsdoc.json",
     "build": "webpack --config webpack.config.js",
-    "webpack-dev-server": "webpack-dev-server",
-    "dev": "webpack-dev-server --mode=development",
-    "prod": "webpack --mode=production"
-
+    "start:dev": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
