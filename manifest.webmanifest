@@ -1,0 +1,25 @@
+{
+    "short_name": "To Do List",
+    "name": "Application ToDoList",
+    "description": "L'outil de création en ligne de Todo vous aide à établir une liste de tâches ..",
+    "icons": [{
+        "src": "./assets/img/clipboard.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+
+    }],
+    "start_url": "/index.html",
+    "background_color": "#3367D6",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#3367D6",
+    "shortcuts": [{
+            "name": "To Do List",
+            "short_name": "To Do List",
+            "description": "L'outil de création en ligne de Todo vous aide à établir une liste de tâches ..",
+            "url": "/index.html"
+        }
+
+    ]
+}
