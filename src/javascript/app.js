@@ -7,6 +7,7 @@ require('../javascript/template.js');
 require('../javascript/controller.js');
 require('../javascript/helpers.js');
 require('../javascript/app.js');
+// require('./dist/main.css');
 
 
 (function () {

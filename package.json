@@ -2,6 +2,7 @@
   "private": true,
   "name": "p8-elo",
   "dependencies": {
+    "bootstrap": "^4.5.2",
     "docdash": "^1.2.0",
     "style-loader": "^1.2.1",
     "todomvc-app-css": "^2.0.1",
