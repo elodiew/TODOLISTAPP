@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // Here you write different options and tell Webpack what to do
 module.exports = {
     mode: process.env.NODE_ENV,
-    entry: ["./src/javascript/app.js", "./dist/main.css", ],
+    entry: ["./src/javascript/app.js", "./assets/style/main.css", ],
 
     // Path and filename of your result bundle.
     // Webpack will bundle all JavaScript into this file
@@ -22,7 +22,7 @@ module.exports = {
             use: [{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                        publicPath: '/assets/style/',
+                        publicPath: './assets/style/',
                     },
                 },
                 'css-loader',
