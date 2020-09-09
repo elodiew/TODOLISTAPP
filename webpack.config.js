@@ -3,28 +3,17 @@ const path = require('path');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {
+    merge
+} = require('webpack-merge');
+const commonConfig = require('./webpack.config.common');
 
 
-module.exports = {
+module.exports = merge(commonConfig, {
     entry: "./src/app.js",
-
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+    mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
     },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            inject: true,
-            template: path.resolve(__dirname, 'src', 'index.html'),
-        }),
-    ],
-    module: {
-        rules: [{
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader']
-        }]
-    }
-};
+});

@@ -4904,11 +4904,9 @@ limitations under the License.
           const highlightLine = messages.length > 0 || hasOnlyGeneralMessages;
           const contentLineDetails = Object.assign({}, line, {
             contentType: highlightLine ?
-              LineContentType.CONTENT_HIGHLIGHTED :
-              LineContentType.CONTENT_NORMAL,
+              LineContentType.CONTENT_HIGHLIGHTED : LineContentType.CONTENT_NORMAL,
             visibility: lineWhenCollapsed ?
-              LineVisibility.ALWAYS :
-              LineVisibility.WHEN_EXPANDED,
+              LineVisibility.ALWAYS : LineVisibility.WHEN_EXPANDED,
           });
           lineContainer.append(
             SnippetRenderer.renderSnippetLine(dom, tmpl, contentLineDetails)
@@ -11706,7 +11704,8 @@ limitations under the License.
             "path": "audits[bootup-time].displayValue"
           }],
           "lighthouse-core/lib/i18n/i18n.js | largestContentfulPaintMetric": [
-            "audits[largest-contentful-paint].title"],
+            "audits[largest-contentful-paint].title"
+          ],
           "lighthouse-core/audits/metrics/largest-contentful-paint.js | description": [
             "audits[largest-contentful-paint].description"
           ],
@@ -11778,7 +11777,8 @@ limitations under the License.
           ],
           "lighthouse-core/audits/server-response-time.js | title": ["audits[server-response-time].title"],
           "lighthouse-core/audits/server-response-time.js | description": [
-            "audits[server-response-time].description"],
+            "audits[server-response-time].description"
+          ],
           "lighthouse-core/audits/server-response-time.js | displayValue": [{
             "values": {
               "timeInMs": 42.576
@@ -11805,7 +11805,8 @@ limitations under the License.
           "lighthouse-core/audits/redirects.js | description": ["audits.redirects.description"],
           "lighthouse-core/audits/installable-manifest.js | title": ["audits[installable-manifest].title"],
           "lighthouse-core/audits/installable-manifest.js | description": [
-            "audits[installable-manifest].description"],
+            "audits[installable-manifest].description"
+          ],
           "lighthouse-core/audits/apple-touch-icon.js | title": ["audits[apple-touch-icon].title"],
           "lighthouse-core/audits/apple-touch-icon.js | description": ["audits[apple-touch-icon].description"],
           "lighthouse-core/audits/splash-screen.js | title": ["audits[splash-screen].title"],
@@ -11840,9 +11841,11 @@ limitations under the License.
           "lighthouse-core/audits/bootup-time.js | description": ["audits[bootup-time].description"],
           "lighthouse-core/audits/bootup-time.js | columnTotal": ["audits[bootup-time].details.headings[1].text"],
           "lighthouse-core/audits/bootup-time.js | columnScriptEval": [
-            "audits[bootup-time].details.headings[2].text"],
+            "audits[bootup-time].details.headings[2].text"
+          ],
           "lighthouse-core/audits/bootup-time.js | columnScriptParse": [
-            "audits[bootup-time].details.headings[3].text"],
+            "audits[bootup-time].details.headings[3].text"
+          ],
           "lighthouse-core/audits/uses-rel-preload.js | title": ["audits[uses-rel-preload].title"],
           "lighthouse-core/audits/uses-rel-preload.js | description": ["audits[uses-rel-preload].description"],
           "lighthouse-core/audits/uses-rel-preconnect.js | title": ["audits[uses-rel-preconnect].title"],
@@ -11884,7 +11887,8 @@ limitations under the License.
           ],
           "lighthouse-core/lib/i18n/i18n.js | totalResourceType": ["audits[resource-summary].details.items[0].label"],
           "lighthouse-core/lib/i18n/i18n.js | scriptResourceType": [
-            "audits[resource-summary].details.items[1].label"],
+            "audits[resource-summary].details.items[1].label"
+          ],
           "lighthouse-core/lib/i18n/i18n.js | otherResourceType": ["audits[resource-summary].details.items[2].label"],
           "lighthouse-core/lib/i18n/i18n.js | stylesheetResourceType": [
             "audits[resource-summary].details.items[3].label"
@@ -11928,7 +11932,8 @@ limitations under the License.
           }],
           "lighthouse-core/audits/manual/pwa-cross-browser.js | title": ["audits[pwa-cross-browser].title"],
           "lighthouse-core/audits/manual/pwa-cross-browser.js | description": [
-            "audits[pwa-cross-browser].description"],
+            "audits[pwa-cross-browser].description"
+          ],
           "lighthouse-core/audits/manual/pwa-page-transitions.js | title": ["audits[pwa-page-transitions].title"],
           "lighthouse-core/audits/manual/pwa-page-transitions.js | description": [
             "audits[pwa-page-transitions].description"
@@ -12010,7 +12015,8 @@ limitations under the License.
             "audits[document-title].description"
           ],
           "lighthouse-core/audits/accessibility/duplicate-id-active.js | title": [
-            "audits[duplicate-id-active].title"],
+            "audits[duplicate-id-active].title"
+          ],
           "lighthouse-core/audits/accessibility/duplicate-id-active.js | description": [
             "audits[duplicate-id-active].description"
           ],
@@ -12028,10 +12034,12 @@ limitations under the License.
           "lighthouse-core/audits/accessibility/frame-title.js | description": ["audits[frame-title].description"],
           "lighthouse-core/audits/accessibility/heading-order.js | title": ["audits[heading-order].title"],
           "lighthouse-core/audits/accessibility/heading-order.js | description": [
-            "audits[heading-order].description"],
+            "audits[heading-order].description"
+          ],
           "lighthouse-core/audits/accessibility/html-has-lang.js | title": ["audits[html-has-lang].title"],
           "lighthouse-core/audits/accessibility/html-has-lang.js | description": [
-            "audits[html-has-lang].description"],
+            "audits[html-has-lang].description"
+          ],
           "lighthouse-core/audits/accessibility/html-lang-valid.js | title": ["audits[html-lang-valid].title"],
           "lighthouse-core/audits/accessibility/html-lang-valid.js | description": [
             "audits[html-lang-valid].description"
@@ -12059,7 +12067,8 @@ limitations under the License.
           "lighthouse-core/audits/accessibility/meta-refresh.js | description": ["audits[meta-refresh].description"],
           "lighthouse-core/audits/accessibility/meta-viewport.js | title": ["audits[meta-viewport].title"],
           "lighthouse-core/audits/accessibility/meta-viewport.js | description": [
-            "audits[meta-viewport].description"],
+            "audits[meta-viewport].description"
+          ],
           "lighthouse-core/audits/accessibility/object-alt.js | title": ["audits[object-alt].title"],
           "lighthouse-core/audits/accessibility/object-alt.js | description": ["audits[object-alt].description"],
           "lighthouse-core/audits/accessibility/tabindex.js | title": ["audits.tabindex.title"],
@@ -12076,7 +12085,8 @@ limitations under the License.
           "lighthouse-core/audits/accessibility/valid-lang.js | description": ["audits[valid-lang].description"],
           "lighthouse-core/audits/accessibility/video-caption.js | title": ["audits[video-caption].title"],
           "lighthouse-core/audits/accessibility/video-caption.js | description": [
-            "audits[video-caption].description"],
+            "audits[video-caption].description"
+          ],
           "lighthouse-core/audits/accessibility/video-description.js | title": ["audits[video-description].title"],
           "lighthouse-core/audits/accessibility/video-description.js | description": [
             "audits[video-description].description"
@@ -12094,7 +12104,8 @@ limitations under the License.
             "path": "audits[uses-long-cache-ttl].displayValue"
           }],
           "lighthouse-core/lib/i18n/i18n.js | columnCacheTTL": [
-            "audits[uses-long-cache-ttl].details.headings[1].text"],
+            "audits[uses-long-cache-ttl].details.headings[1].text"
+          ],
           "lighthouse-core/audits/byte-efficiency/total-byte-weight.js | title": ["audits[total-byte-weight].title"],
           "lighthouse-core/audits/byte-efficiency/total-byte-weight.js | description": [
             "audits[total-byte-weight].description"
@@ -12201,7 +12212,8 @@ limitations under the License.
             "audits[dom-size].details.headings[0].text"
           ],
           "lighthouse-core/audits/dobetterweb/dom-size.js | columnValue": [
-            "audits[dom-size].details.headings[2].text"],
+            "audits[dom-size].details.headings[2].text"
+          ],
           "lighthouse-core/audits/dobetterweb/dom-size.js | statisticDOMElements": [
             "audits[dom-size].details.items[0].statistic"
           ],
@@ -12218,7 +12230,8 @@ limitations under the License.
             "audits[external-anchors-use-rel-noopener].description"
           ],
           "lighthouse-core/audits/dobetterweb/geolocation-on-start.js | title": [
-            "audits[geolocation-on-start].title"],
+            "audits[geolocation-on-start].title"
+          ],
           "lighthouse-core/audits/dobetterweb/geolocation-on-start.js | description": [
             "audits[geolocation-on-start].description"
           ],
@@ -12276,7 +12289,8 @@ limitations under the License.
           "lighthouse-core/audits/seo/canonical.js | description": ["audits.canonical.description"],
           "lighthouse-core/audits/seo/manual/structured-data.js | title": ["audits[structured-data].title"],
           "lighthouse-core/audits/seo/manual/structured-data.js | description": [
-            "audits[structured-data].description"],
+            "audits[structured-data].description"
+          ],
           "lighthouse-core/config/default-config.js | performanceCategoryTitle": ["categories.performance.title"],
           "lighthouse-core/config/default-config.js | a11yCategoryTitle": ["categories.accessibility.title"],
           "lighthouse-core/config/default-config.js | a11yCategoryDescription": [
@@ -12286,7 +12300,8 @@ limitations under the License.
             "categories.accessibility.manualDescription"
           ],
           "lighthouse-core/config/default-config.js | bestPracticesCategoryTitle": [
-            "categories[best-practices].title"],
+            "categories[best-practices].title"
+          ],
           "lighthouse-core/config/default-config.js | seoCategoryTitle": ["categories.seo.title"],
           "lighthouse-core/config/default-config.js | seoCategoryDescription": ["categories.seo.description"],
           "lighthouse-core/config/default-config.js | seoCategoryManualDescription": [
@@ -12306,7 +12321,8 @@ limitations under the License.
           ],
           "lighthouse-core/config/default-config.js | budgetsGroupTitle": ["categoryGroups.budgets.title"],
           "lighthouse-core/config/default-config.js | budgetsGroupDescription": [
-            "categoryGroups.budgets.description"],
+            "categoryGroups.budgets.description"
+          ],
           "lighthouse-core/config/default-config.js | diagnosticsGroupTitle": ["categoryGroups.diagnostics.title"],
           "lighthouse-core/config/default-config.js | diagnosticsGroupDescription": [
             "categoryGroups.diagnostics.description"
@@ -12318,7 +12334,8 @@ limitations under the License.
             "categoryGroups[pwa-installable].title"
           ],
           "lighthouse-core/config/default-config.js | pwaOptimizedGroupTitle": [
-            "categoryGroups[pwa-optimized].title"],
+            "categoryGroups[pwa-optimized].title"
+          ],
           "lighthouse-core/config/default-config.js | a11yBestPracticesGroupTitle": [
             "categoryGroups[a11y-best-practices].title"
           ],
@@ -12348,7 +12365,8 @@ limitations under the License.
             "categoryGroups[a11y-aria].description"
           ],
           "lighthouse-core/config/default-config.js | a11yLanguageGroupTitle": [
-            "categoryGroups[a11y-language].title"],
+            "categoryGroups[a11y-language].title"
+          ],
           "lighthouse-core/config/default-config.js | a11yLanguageGroupDescription": [
             "categoryGroups[a11y-language].description"
           ],

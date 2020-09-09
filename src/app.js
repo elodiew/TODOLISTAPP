@@ -9,6 +9,8 @@ require('./helpers.js');
 require('./app.js');
 // require('./dist/main.css');
 import './style/main.css'
+import '../assets/img/todo.png'
+
 
 (function () {
 	'use strict';
