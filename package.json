@@ -3,7 +3,9 @@
   "name": "p8-elo",
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "clean-webpack-plugin": "^3.0.0",
     "docdash": "^1.2.0",
+    "html-webpack-plugin": "^4.4.1",
     "style-loader": "^1.2.1",
     "todomvc-app-css": "^2.0.1",
     "todomvc-common": "^1.0.1"
