@@ -163,7 +163,7 @@ body {
     right: 100%;
     bottom: 100%;
     z-index: 2;
-    cursor: grab;
+    cursor: pointer;
 }
 
 .toggle-all+label {
