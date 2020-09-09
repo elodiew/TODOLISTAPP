@@ -1,14 +1,14 @@
 /*global app, $on */
 
-require('../javascript/view.js');
-require('../javascript/store.js');
-require('../javascript/model.js');
-require('../javascript/template.js');
-require('../javascript/controller.js');
-require('../javascript/helpers.js');
-require('../javascript/app.js');
+require('./view.js');
+require('./store.js');
+require('./model.js');
+require('./template.js');
+require('./controller.js');
+require('./helpers.js');
+require('./app.js');
 // require('./dist/main.css');
-
+import './style/main.css'
 
 (function () {
 	'use strict';
