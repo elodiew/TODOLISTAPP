@@ -59,7 +59,7 @@ describe('controller', function () {
 		subject = new app.Controller(model, view);
 	});
 
-	it('devrait afficher les entrees au demarrage', function () { // entrées = taches
+	it('devrait afficher les entrees au chargement', function () { // entrées = taches
 		// TODO: write test 01
 		let todos = {}; // créer un objet todos vide
 		setUpModel([todos]); // initialiser le modèle avec l'objet todos
@@ -72,7 +72,7 @@ describe('controller', function () {
 
 	describe('routing', function () {
 
-		it('devrait afficher toutes les entrees sans route', function () {
+		it('devrait afficher toutes les entrees au chargement', function () {
 			let todo = {
 				title: 'my todo'
 			};
@@ -83,7 +83,7 @@ describe('controller', function () {
 			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 		});
 
-		it('devrait afficher toutes les entrees sans route "all"', function () {
+		it('devrait afficher toutes les entrees au chargement "all"', function () {
 			let todo = {
 				title: 'my todo'
 			};
