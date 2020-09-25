@@ -2,10 +2,10 @@
 	'use strict';
 
 	/**
-	 * MODEL Création d'une nouvelle instance de Model et intéraction avec la classe Store
-	 * Crée une nouvelle instance de modèle et connecte le stockage.
+	 * MODEL Creation of a new Model instance and interaction with the Store class
+	 * Creates a new model instance and connects storage.
 	 * @constructor
-	 * @param {object} storage Identifie la classe Store côté client.
+	 * @param {object} storage Identifies the client-side Store class.
 	 */
 	class Model {
 		constructor(storage) {
@@ -13,9 +13,9 @@
 		}
 
 		/**
-		 * Créer un nouveau model de todo pour la tâche ajoutée
-		 * @param {string} [title] Le titre de la tâche
-		 * @param {function} [callback] La fonction appelé après que le model soit crée.
+		 * Create a new todo model for the added task
+		 * @param {string} [title] The title of the task
+		 * @param {function} [callback] The function called after the model is created.
 		 */
 		create(title, callback) {
 			title = title || '';
@@ -30,18 +30,18 @@
 		};
 
 		/**
-		 * Recherche et renvoie un modèle stocké. Si aucune requête n'est donnée, il sera simplement
-		 * tout retourner. Si vous passez une chaîne ou un nombre, cela ressemblera à
-		 * l'ID du modèle à trouver. Enfin, vous pouvez lui passer un objet pour correspondre
+		 * Finds and returns a stored model. If no request is given, it will simply be
+		 * return everything. If you pass a string or a number it will look like
+		 * the ID of the model to find. Finally, you can pass it an object to match
 		 * contre.remove
-		 * @param {string|number|object} [query] La requête pour filtrer les modèles
-		 * @param {function} [callback] Une fonction de rappel à utiliser lorsqu'un model est trouvé
+		 * @param {string|number|object} [query] The query to filter the models
+		 * @param {function} [callback] A callback function to use when a model is found
 		 * 
-		 * Recherche et retourne un modèle stocké. Si aucune requête n'est donnée, tout sera simplement retourné. Si vous transmettez une chaîne ou un nombre, il le recherchera en tant qu'ID du modèle à rechercher. Enfin, vous pouvez lui transmettre un objet à comparer. Recherche et retourne dans le localStorage un model stocké. Si aucune requête n'est envoyée, tous les models seront renvoyés. Si la requête est une chaine de caractère ou un nombre, la méthode recherchera un id de model à retourner Il est aussi possible de passer un objet à comparer dans la requête.
+		 * Finds and returns a stored model. If no request is given, everything will simply be returned. If you pass a string or a number, it will look for it as the ID of the pattern to find. Finally, you can pass it an object to compare. Finds and returns a stored model in the localStorage. If no request is sent, all models will be returned. If the request is a string or a number, the method will look for a model id to return. It is also possible to pass an object to compare in the request.
 		 * @example 
-		 * model.read(1, func); // Va chercher et trouver le modèle avec l'id 1
-		 * model.read('1'); // Fera la même chose
-		 *  Ci-dessous, un exemple avec foo égal à bar et hello égal à world
+		 * model.read(1, func); // Go search and find the model with id 1
+		 * model.read('1'); // Will do the same
+		 *  Below is an example with foo equal to bar and hello equal to world
 		 * model.read({ foo: 'bar', hello: 'world' });remove
 		 */
 		read(query, callback) {
@@ -62,34 +62,34 @@
 		};
 
 		/**
-		 * Met à jour un modèle en lui attribuant un ID, des données à mettre à jour et une fonction de rappel appelée une fois la mise à jour terminée.
-		 * @param {number} id L'id du model à mettre à jour
-		 * @param {object} data Les données à mettre à jour et leurs nouvelles valeurs
-		 * @param {function} callback La fonction de rappel utilisée après la mise à jour
+		 * Updates a model by assigning it an ID, data to update, and a callback function called when the update is complete.
+		 * @param {number} id The id of the model to update
+		 * @param {object} data The data to update and their new values
+		 * @param {function} callback The callback function used after the update
 		 */
 		update(id, data, callback) {
 			this.storage.save(data, callback, id);
 		};
 
 		/**
-		 * Supprime un élément du stockage
-		 * @param {number} id L'ID du modèle à supprimer
-		 * @param {function} callback La fonction de rappel utilisée après la suppression
+		 * Removes an item from storage
+		 * @param {number} id The ID of the model to delete
+		 * @param {function} callback The callback function used after deletion
 		 */
 		remove(id, callback) {
 			this.storage.remove(id, callback);
 		};
 
 		/**
-		 * AVERTISSEMENT: Attention, cette méthode supprime tous les éléments du stockage
-		 * @param {function} callback La fonction de rappel utilisée après la suppression
+		 * WARNING: Be careful, this method removes all items from storage
+		 * @param {function} callback The callback function used after deletion
 		 */
 		removeAll(callback) {
 			this.storage.drop(callback);
 		};
 
 		/**
-		 * Retourne le nombre de todos
+		 * Returns the number of todos
 		 */
 		getCount(callback) {
 			let todos = {
@@ -112,7 +112,7 @@
 			});
 		};
 	};
-	// Exporter vers window
+	// Export to window
 	window.app = window.app || {};
 	window.app.Model = Model;
 })(window);
