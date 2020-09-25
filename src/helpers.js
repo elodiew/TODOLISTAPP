@@ -7,39 +7,39 @@
 
 	/**
 	 * Récupère un élément avec querySelector (qs) et le sélecteur CSS
-	 * @param {string} selector Le sélecteur css de l'élément
-	 *  @param {string} scope Le scope de l'élément (si pas renseigné, document par défaut)
+	 * @param {string} selector The element's css selector
+	 *  @param {string} scope The scope of the element (if not filled in, default document)
 	 */
 	window.qs = function (selector, scope) {
 		return (scope || document).querySelector(selector);
 	};
 
 	/**
-	 * Récupère plusieurs éléments avec querySelectorAll (qsa) et le sélecteur CSS
-	 * @param {string} selector Le sélecteur css de l'élément
-	 *  @param {string} scope Le scope de l'élément (si pas renseigné, document par défaut)
+	 * Get multiple items with querySelectorAll (qsa) and CSS selector
+	 * @param {string} selector The element's css selector
+	 *  @param {string} scope The scope of the element (if not filled in, default document)
 	 */
 	window.qsa = function (selector, scope) {
 		return (scope || document).querySelectorAll(selector);
 	};
 
 	/**
-	 * Ajoute un écouteur d'évènement à l'élément ciblé
-	 * @param {element} target L'élément ciblé
-	 *  @param {string} type Le type de l'évènement (click, change...)
-	 *  @param {string} callback La réponse en cas d'évènement
-	 *  @param {Boolean} useCapture indique si l'évènement est envoyé au listener enregistré avant d'être distribué à tout EventTarget (https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener)
+	 * Adds an event listener to the targeted item
+	 * @param {element} target The targeted element
+	 *  @param {string} type The type of event (click, change ...)
+	 *  @param {string} callback The response in the event of an event
+	 *  @param {Boolean} useCapture indicates if the event is sent to the registered listener before being dispatched to any EventTarget (https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener)
 	 */
 	window.$on = function (target, type, callback, useCapture) {
 		target.addEventListener(type, callback, !!useCapture);
 	};
 
 	/**
-	 * Ajoute un écouteur d'évènement à tous les éléments qui correspondent au sélecteur passé dans la fonction.
-	 * @param {element} target L'élément ciblé
-	 *  @param {string} selector Le sélecteur css de l'élément ciblé
-	 *  @param {string} seltypeector Le type de l'event
-	 *  @param {string} handler Callback exécuté
+	 * Adds an event listener to all items that match the selector passed in the function.
+	 * @param {element} target The targeted element
+	 *  @param {string} selector The css selector of the targeted element
+	 *  @param {string} seltypeector The type of event
+	 *  @param {string} handler Callback executed
 	 */
 	window.$delegate = function (target, selector, type, handler) {
 		function dispatchEvent(event) {
@@ -58,9 +58,9 @@
 	};
 
 	/**
-	 * Trouve l'élément parent qui porte le tag suivant : $parent(qs('a'), 'div');
-	 * @param {element} element L'élément ciblé
-	 *  @param {string} tagName Le sélecteur css de l'élément ciblé
+	 * Find the parent element with the following tag: $ parent (qs ('a'), 'div');
+	 * @param {element} element The targeted element
+	 *  @param {string} tagName The css selector of the targeted element
 	 */
 	window.$parent = function (element, tagName) {
 		if (!element.parentNode) {
@@ -71,7 +71,7 @@
 		}
 		return window.$parent(element.parentNode, tagName);
 	};
-	// Autoriser la boucle sur les nœuds en chaînant:
+	// Allow the loop on the nodes by chaining:
 	// qsa('.foo').forEach(function () {})
 	NodeList.prototype.forEach = Array.prototype.forEach;
 })(window);
