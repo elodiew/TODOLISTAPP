@@ -2,10 +2,10 @@
 	'use strict';
 
 	/**
-	 * CONTROLLER Permet l'intéraction entre le Model et la View
+	 * CONTROLLER Allows interaction between the Model and the View
 	 * @constructor
-	 * @param {object} model L'instance du Model
-	 * @param {object} view L'instance de la View
+	 * @param {object} model The Model instance
+	 * @param {object} view The View instance
 	 */
 	class Controller {
 		constructor(model, view) {
@@ -47,8 +47,8 @@
 		}
 
 		/**
-		 * Charge et initialise la View
-		 * @param {string} 'Peut prendre 3 valeurs : '' / 'active' / 'completed'
+		 * Loads and initializes the View
+		 * @param {string} 'Can take 3 values:' '/' active '/' completed '
 		 */
 		setView(locationHash) {
 			let route = locationHash.split('/')[1];
@@ -57,7 +57,7 @@
 		};
 
 		/**
-		 * Affiche toutes les tâches de la liste en cours
+		 * Displays all tasks in the current list
 		 */
 		showAll() {
 			let self = this;
@@ -67,7 +67,7 @@
 		};
 
 		/**
-		 * Affiche toutes les tâches actives de la liste en cours
+		 * Displays all active tasks in the current list
 		 */
 		showActive() {
 			let self = this;
@@ -79,7 +79,7 @@
 		};
 
 		/**
-		 * Affiche toutes les tâches complétées de la liste en cours
+		 * Displays all completed tasks in the current list
 		 */
 		showCompleted() {
 			let self = this;
@@ -91,8 +91,8 @@
 		};
 
 		/**
-		 * Ajoute une nouvelle tâche dans la liste en cours (insertion dans le DOM et dans le local storage)
-		 * @param {string} title Le titre de la tâche ajoutée
+		 * Adds a new task in the current list (insertion in the DOM and in the local storage)
+		 * @param {string} title The title of the added task
 		 */
 		addItem(title) {
 			let self = this;
@@ -108,9 +108,9 @@
 		};
 
 		/**
-		 * Déclenche le mode d'édition des éléments.
-		 * Active l'édition d'une tâche de la liste en cours
-		 *  @param {number} id L'id du model (correspondant à la tâche à éditer)
+		 * Triggers edit mode for items.
+		 * Enables editing of a task from the current list
+		 *  @param {number} id The model id (corresponding to the task to edit)
 		 */
 		editItem(id) {
 			let self = this;
@@ -123,9 +123,9 @@
 		};
 
 		/**
-		 * Enregistre la nouvelle tâche éditée
-		 *  @param {number} id L'id de la tâche éditéez
-		 *  @param {string} title Le titre de la tâche éditée
+		 * Save the new edited task
+		 *  @param {number} id The id of the edited task
+		 *  @param {string} title The title of the edited task
 		 */
 		editItemSave(id, title) {
 			let self = this;
@@ -153,8 +153,8 @@
 		};
 
 		/** 
-		 * Annule l'édition de la tâche en cours 
-		 * @param {number} idL'id de la tâche éditée
+		 * Cancels editing of the current task
+		 * @param {number} idL L'id of the edited task
 		 */
 		editItemCancel(id) {
 			let self = this;
@@ -167,8 +167,8 @@
 		};
 
 		/**
-		 * Supprime une tâche de la liste en cours.
-		 * @param {number} id L'id de la tâche à supprimer dans le DOM et dans le localStorage
+		 * Removes a task from the current list.
+		 * @param {number} id The id of the task to delete in the DOM and in the localStorage
 		 */
 		removeItem(id) {
 			let self = this;
@@ -193,7 +193,7 @@
 		};
 
 		/**
-		 * Supprime toutes les tâches terminées de la liste en cours
+		 * Removes all completed tasks from the current list
 		 */
 		removeCompletedItems() {
 			let self = this;
@@ -209,12 +209,12 @@
 		};
 
 		/**
-		 * Actualise l'affichage de la tâche en fonction de son statut (terminé ou non)
-		 * Donnez-lui un identifiant d'un modèle et une case à cocher et il mettra à jour l'article
-		 * dans le stockage en fonction de l'état de la case à cocher.
-		 * @param {number} id L'id de la tâche (toutes les tâches sont parcourues)
-		 * @param {object} checkbox Vérifie si le champ checked est coché ou non
-		 * @param {boolean|undefined} silent Empêche le refiltrage des éléments de la liste
+		 * Updates the display of the task according to its status (completed or not)
+		 * Give it a template id and a checkbox and it will update the article
+		 * in storage according to the state of the checkbox.
+		 * @param {number} id The task id (all tasks are scanned)
+		 * @param {object} checkbox Checks if the checked field is checked or not
+		 * @param {boolean|undefined} silent Prevents re-filtering of list items
 		 */
 		toggleComplete(id, completed, silent) {
 			let self = this;
@@ -233,8 +233,8 @@
 		};
 
 		/**
-		 * Permet d'activer ou de désactiver les cases cochées
-		 * @param {object} completed Les tâches terminées
+		 * Allows you to activate or deactivate the checked boxes
+		 * @param {object} completed Completed tasks
 		 */
 		toggleAll(completed) {
 			let self = this;
@@ -250,7 +250,7 @@
 		};
 
 		/**
-		 * Met à jour le compteur de tâche en bas à gauche de l'application
+		 * Updates the task counter at the bottom left of the app
 		 */
 		_updateCount() {
 
@@ -271,17 +271,17 @@
 		};
 
 		/**
-		 * Refiltre les tâches en fonction de leur statut actif (#active)
-		 * @param {boolean|undefined} force  Refiltre les tâches.
+		 * Refilter tasks according to their active status (#active)
+		 * @param {boolean|undefined} force  Refilter the tasks.
 		 */
 		_filter(force) {
 			let activeRoute = this._activeRoute.charAt(0).toUpperCase() + this._activeRoute.substr(1);
 
-			// Mettez à jour les éléments de la page, qui changent à chaque tâche terminée
+			// Update the page elements, which change with each completed task
 			this._updateCount();
 
-			// Si le dernier itinéraire actif n'est pas "Tous" ou si nous changeons d'itinéraire, nous
-			// recréez les éléments de l'élément todo, en appelant:
+			// If the last active route is not "All" or if we change the route, we
+			// recreate the elements of the todo element, by calling:
 			//   this.show[All|Active|Completed]();
 			if (force || this._lastActiveRoute !== 'All' || this._lastActiveRoute !== activeRoute) {
 				this['show' + activeRoute]();
@@ -291,12 +291,12 @@
 		};
 
 		/**
-		 * Met à jour l'url pour filtrer les tâches (ajoute à l'url : /active ou /completed)
+		 * Update url to filter tasks (add to url: / active or / completed)
 		 */
 		_updateFilterState(currentPage) { // 
 
-			// Stocker une référence à l'itinéraire actif, nous permettant de re-filtrer todo
-			// éléments car ils sont marqués comme complets ou incomplets.
+			// Store a reference to the active route, allowing us to re-filter todo
+			// items because they are marked as complete or incomplete.
 			this._activeRoute = currentPage;
 
 			if (currentPage === '') {
@@ -309,7 +309,7 @@
 		};
 	};
 
-	// Exporter vers la window
+	// Export to window
 	window.app = window.app || {};
 	window.app.Controller = Controller;
 })(window);
