@@ -3,8 +3,8 @@
 (function (window) {
 	'use strict';
 	/** 
-	 * VIEW Définit les valeurs par défaut du template ainsi que les intéractions avec le DOM (touches du clavier et évènements)
-	 * @param {string} template template utilisé
+	 * VIEW Defines the default values ​​of the template as well as the interactions with the DOM (keyboard keys and events)
+	 * @param {string} template template used
 	 */
 	class View {
 		constructor(template) {
@@ -23,8 +23,8 @@
 		}
 
 		/** 
-		 * Supprime une tâche de la liste
-		 * @param {number} id L'id de la tâche à supprimer
+		 * Remove a task from the list
+		 * @param {number} id The id of the task to delete
 		 */
 		_removeItem(id) {
 			let elem = qs('[data-id="' + id + '"]');
@@ -35,9 +35,9 @@
 		};
 
 		/** 
-		 * Affiche ou cache les éléments terminés
-		 * @param {number} completedCount Le nombre d'éléments terminés
-		 * @param {boolean} visible Les éléments sont-ils visibles ou non ?
+		 * Show or hide completed items
+		 * @param {number} completedCount The number of elements completed
+		 * @param {boolean} visible Are the elements visible or not?
 		 */
 		_clearCompletedButton(completedCount, visible) {
 			this.$clearCompleted.innerHTML = this.template.clearCompletedButton(completedCount);
@@ -45,8 +45,8 @@
 		};
 
 		/** 
-		 * Affiche ou cache les éléments terminés
-		 * @param {string} currentPage Le filtre appliqué : '' / active / completed
+		 * Show or hide completed items
+		 * @param {string} currentPage The filter applied: '' / active / completed
 		 */
 		_setFilter(currentPage) {
 			qs('.filters .selected').className = '';
@@ -54,9 +54,9 @@
 		};
 
 		/** 
-		 * Test si une tâche est terminée ou non
-		 * @param {number} id L'id de la tâche à tester
-		 * @param {boolean} completed La tâche est-elle terminée ou non ?
+		 * Testing whether a task is complete or not
+		 * @param {number} id The id of the task to test
+		 * @param {boolean} completed Is the task complete or not?
 		 */
 		_elementComplete(id, completed) {
 			let listItem = qs('[data-id="' + id + '"]');
@@ -67,14 +67,14 @@
 
 			listItem.className = completed ? 'completed' : '';
 
-			// Dans le cas où il a été basculé à partir d'un événement et non en cliquant sur la case à cocher
+			// In case it was toggled from an event and not by clicking on the checkbox
 			qs('input', listItem).checked = completed;
 		};
 
 		/** 
-		 * Editer une tâche dans la liste (grâce au double click)
-		 * @param {number} id L'id de la tâche à éditer
-		 * @param {string} title Le nouveau titre de la tâche
+		 * Edit a task in the list (thanks to the double click)
+		 * @param {number} id The id of the task to edit
+		 * @param {string} title The new job title
 		 */
 		_editItem(id, title) {
 			let listItem = qs('[data-id="' + id + '"]');
@@ -94,9 +94,9 @@
 		};
 
 		/** 
-		 * Indique que l'édition d'une tâche est terminée
-		 * @param {number} id L'id de la tâche qui était en édition
-		 * @param {string} title Le nouveau titre de la tâche
+		 * Indicates that the editing of a task is complete
+		 * @param {number} id The id of the task that was being edited
+		 * @param {string} title The new job title
 		 */
 		_editItemDone(id, title) {
 			let listItem = qs('[data-id="' + id + '"]');
@@ -116,9 +116,9 @@
 		};
 
 		/** 
-		 * Indique que l'édition d'une tâche est terminée
-		 * @param {string} viewCmd La fonction active
-		 * @param {object} parameter Les paramètres actifs
+		 * Indicates that editing of a task is complete
+		 * @param {string} viewCmd The active function
+		 * @param {object} parameter Active parameters
 		 */
 		render(viewCmd, parameter) {
 			let self = this;
@@ -162,9 +162,9 @@
 		};
 
 		/** 
-		 * Définit les actions après l'édition d'une tâche
-		 * @param {element} element La tâche dont on cherche l'id
-		 * Return L'id de la tâche
+		 * Defines the actions after editing a task
+		 * @param {element} element The task whose id we are looking for
+		 * Return The task id
 		 */
 		_itemId(element) {
 			let li = $parent(element, 'li');
@@ -172,8 +172,8 @@
 		};
 
 		/** 
-		 * Définit les actions après l'édition d'une tâche
-		 * @param {function} handler Fonction de rappel qui est exécutée lors de l'annulation de l'édition d'une tâche
+		 * Defines the actions after editing a task
+		 * @param {function} handler Callback function that is executed when canceling the editing of a task
 		 */
 		_bindItemEditDone(handler) {
 			let self = this;
@@ -188,16 +188,16 @@
 
 			$delegate(self.$todoList, 'li .edit', 'keypress', function (event) {
 				if (event.keyCode === self.ENTER_KEY) {
-					// Retirez le curseur de l'entrée lorsque vous appuyez sur Entrée, comme s'il 
-					// était une vraie forme
+					// Remove the cursor from the entry when you press Enter, as if it
+					// was a real form
 					this.blur();
 				}
 			});
 		};
 
 		/** 
-		 * Définit les actions lorsque l'édition d'une tâche est annulée
-		 * @param {function} handler Fonction de rappel qui est exécutée lors de l'annulation de l'édition d'une tâche
+		 * Defines the actions when editing a task is canceled
+		 * @param {function} handler Callback function that is executed when canceling the editing of a task
 		 */
 		_bindItemEditCancel(handler) {
 			let self = this;
@@ -214,14 +214,13 @@
 		};
 
 		/** 
-		 * Greffe des écouteurs d'évènements sur les tâches en fonction des actions de l'utilisateur, côté HTML
-		 * @param {string} event L'event choisi
-		 * @param {function} handler Fonctnion de rappel exécutée selon la situation
+		 * Registry of event listeners on tasks based on user actions, HTML side
+		 * @param {string} event The chosen event
+		 * @param {function} handler Recall function executed according to the situation
 		 */
 		bind(event, handler) {
 			let self = this;
-			// Amélioration
-			// Methode servant a binbder plusieur event: dans une logique d'amelioraztion, nous avons utiliser un traitement switch, qui est un peu plus maintenable et un peu plus lisible et plus performant.
+			// Improvement
 			switch (event) {
 				case 'newTodo':
 					$on(self.$newTodo, 'change', function () {
