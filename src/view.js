@@ -61,9 +61,9 @@
 		_elementComplete(id, completed) {
 			let listItem = qs('[data-id="' + id + '"]');
 
-			// if (!listItem) {
-			// 	return;
-			// }
+			if (!listItem) {
+				return;
+			}
 
 			listItem.className = completed ? 'completed' : '';
 
@@ -79,9 +79,9 @@
 		_editItem(id, title) {
 			let listItem = qs('[data-id="' + id + '"]');
 
-			// if (!listItem) {
-			// 	return;
-			// }
+			if (!listItem) {
+				return;
+			}
 
 			listItem.className = listItem.className + ' editing';
 
@@ -101,9 +101,9 @@
 		_editItemDone(id, title) {
 			let listItem = qs('[data-id="' + id + '"]');
 
-			// if (!listItem) {
-			// 	return;
-			// }
+			if (!listItem) {
+				return;
+			}
 
 			let input = qs('input.edit', listItem);
 			listItem.removeChild(input);

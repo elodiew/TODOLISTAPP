@@ -35,9 +35,9 @@
 		 * });
 		 */
 		find(query, callback) {
-			// if (!callback) {
-			// 	return;
-			// }
+			if (!callback) {
+				return;
+			}
 
 			let todos = JSON.parse(localStorage[this._dbName]).todos;
 

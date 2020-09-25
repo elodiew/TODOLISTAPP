@@ -59,7 +59,7 @@ describe('controller', function () {
 		subject = new app.Controller(model, view);
 	});
 
-	it('devrait afficher les entrees au chargement', function () { // entrées = taches
+	it('should show entries on start-up', function () { // devrait afficher les tache au chargement
 		// TODO: write test 01
 		let todos = {}; // créer un objet todos vide
 		setUpModel([todos]); // initialiser le modèle avec l'objet todos
@@ -72,7 +72,7 @@ describe('controller', function () {
 
 	describe('routing', function () {
 
-		it('devrait afficher toutes les entrees au chargement', function () {
+		it('should show all entries without a route', function () { // devrait afficher toutes les tache au chargement
 			let todo = {
 				title: 'my todo'
 			};
@@ -83,7 +83,7 @@ describe('controller', function () {
 			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 		});
 
-		it('devrait afficher toutes les entrees au chargement "all"', function () {
+		it('should show all entries without "all" route', function () { // devrait afficher toutes les tache au chargement "all"
 			let todo = {
 				title: 'my todo'
 			};
@@ -94,7 +94,7 @@ describe('controller', function () {
 			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 		});
 
-		it('devrait afficher les entrees actives', function () {
+		it('should show active entries', function () { // devrait afficher les tache actives
 			// START TODO: write test 02 ****************************************/
 			let todo = {
 				title: 'todoTest',
@@ -112,27 +112,9 @@ describe('controller', function () {
 			expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
 			// END write test ****************************************/
 		});
-		// // PAR EXEMPLE ECRIRE UN TEST QUI ECHOUE! !!!!!!!!!!!!!!!!!!!!!
-		// it('devrait afficher les entrees actives', function () {
-		// 	// START TODO: write test !!!!!!!!!!!!!!!!!!!!!!!!! ****************************************/
-		// 	let todo = {
-		// 		title: 'todoTest',
-		// 		completed: true
-		// 	}; // créer un objet todo avec la propriété completed à false
-		// 	setUpModel([todo]); // initialiser le modèle avec l'objet todo
-		// 	subject.setView('#/active'); // initialiser la vue en affichant seulement les todos actives
 
-		// 	// doit retourner true si le model trouve la todo testée (le paramètre completed)
-		// 	expect(model.read).toHaveBeenCalledWith({
-		// 		completed: true
-		// 	}, jasmine.any(Function));
 
-		// 	// l'application s'attend à ce que la vue soit appelée avec showEntries et l'objet todos
-		// 	expect(view.render).toHaveBeenCalledWith('showEntries', [todo]);
-		// 	// END write test ****************************************/
-		// });
-
-		it('devrait afficher les entrees terminees', function () {
+		it('should show completed entries', function () { // devrait afficher les tache terminees
 			// START TODO: write test 03 ****************************************/
 			let todo = {
 				title: 'todoTest',
@@ -152,7 +134,7 @@ describe('controller', function () {
 		});
 	});
 
-	it('devrait afficher le bloc de contenu lorsque todos existe', function () {
+	it('should show the content block when todos exists', function () { // devrait afficher le bloc de contenu lorsque todos existe
 		setUpModel([{
 			title: 'my todo',
 			completed: true
@@ -165,7 +147,7 @@ describe('controller', function () {
 		});
 	});
 
-	it('devrait masquer le bloc de contenu lorsqu il n y a pas de todos', function () {
+	it('should hide the content block when no todos exists', function () { // devrait masquer le bloc de contenu lorsqu il n y a pas de todos
 		setUpModel([]);
 
 		subject.setView('');
@@ -175,7 +157,7 @@ describe('controller', function () {
 		});
 	});
 
-	it('devrait cocher le bouton bascule tout, si toutes les taches sont terminees', function () { // toggle all
+	it('should check the toggle all button, if all todos are completed', function () { // devrait cocher le bouton bascule tout, si toutes les taches sont terminees
 		setUpModel([{
 			title: 'my todo',
 			completed: true
@@ -188,7 +170,7 @@ describe('controller', function () {
 		});
 	});
 
-	it('devrait definir le bouton "Effacer termine"', function () {
+	it('should set the "clear completed" button', function () { // devrait definir le bouton "Effacer termine"
 		let todo = {
 			id: 42,
 			title: 'my todo',
@@ -204,7 +186,7 @@ describe('controller', function () {
 		});
 	});
 
-	it('doit mettre en evidence le filtre "Tous" par defaut', function () {
+	it('should highlight "All" filter by default', function () { // doit mettre en evidence le filtre "Tous" par defaut
 		// TODO: write test 04
 		let filterAll = ''; // le filtre par défaut pour afficher toutes les todos
 
@@ -215,7 +197,7 @@ describe('controller', function () {
 		expect(view.render).toHaveBeenCalledWith('setFilter', filterAll);
 	});
 
-	it('doit mettre en surbrillance le filtre "Actif" lors du passage A la vue active', function () {
+	it('should highlight "Active" filter when switching to active view', function () { // doit mettre en surbrillance le filtre "Actif" lors du passage A la vue active
 		// TODO: write test 05
 		let filterActive = 'active'; // le filtre pour afficher les todos actives
 
@@ -227,7 +209,7 @@ describe('controller', function () {
 	});
 
 	describe('toggle all', function () {
-		it('devrait basculer toutes les taches A terminer', function () {
+		it('should toggle all todos to completed', function () { // devrait basculer toutes les taches A terminer
 			// START TODO: write test 06 ****************************************/
 			setUpModel([{
 				title: 'my todo',
@@ -242,7 +224,7 @@ describe('controller', function () {
 			// END ****************************************/
 		});
 
-		it('devrait mettre A jour la vue', function () {
+		it('should update the view', function () { // devrait mettre A jour la vue
 			// START TODO: write test 07 **************************************************************************************************************************/
 			let todo = {
 				id: 72,
@@ -265,7 +247,7 @@ describe('controller', function () {
 	});
 
 	describe('new todo', function () {
-		it('devrait ajouter un nouveau todo au modele', function () {
+		it('should add a new todo to the model', function () { // devrait ajouter un nouveau todo au modele
 			// START TODO: write test 08 ****************************************/
 			setUpModel([]); // initialiser le model
 			subject.setView(''); // initialiser la vue
@@ -276,7 +258,7 @@ describe('controller', function () {
 			// END TODO: write test****************************************/
 		});
 
-		it('devrait ajouter un nouveau todo a la vue', function () {
+		it('should add a new todo to the view', function () { // devrait ajouter un nouveau todo a la vue
 			setUpModel([]);
 			subject.setView('');
 
@@ -299,7 +281,7 @@ describe('controller', function () {
 			}, ]);
 		});
 
-		it('devrait effacer le champ de saisie lorsqu un nouveau todo est ajoute', function () {
+		it('should clear the input field when a new todo is added', function () { // devrait effacer le champ de saisie lorsqu un nouveau todo est ajoute
 			setUpModel([]);
 
 			subject.setView('');
@@ -311,7 +293,7 @@ describe('controller', function () {
 	});
 
 	describe('element removal', function () {
-		it('devrait supprimer une entree du modele', function () {
+		it('should remove an entry from the model', function () { // devrait supprimer une entree du modele
 			// STARt TODO: write test 09 ****************************************************/
 			let todo = {
 				id: 1,
@@ -330,7 +312,7 @@ describe('controller', function () {
 			// END test ****************************************************/
 		});
 
-		it('devrait supprimer une entree de la vue', function () {
+		it('should remove an entry from the view', function () { // devrait supprimer une entree de la vue
 			let todo = {
 				id: 42,
 				title: 'my todo',
@@ -346,7 +328,7 @@ describe('controller', function () {
 			expect(view.render).toHaveBeenCalledWith('removeItem', 42);
 		});
 
-		it('devrait mettre A jour le nombre d elements', function () {
+		it('should update the element count', function () { // devrait mettre A jour le nombre d elements
 			let todo = {
 				id: 42,
 				title: 'my todo',
@@ -364,7 +346,7 @@ describe('controller', function () {
 	});
 
 	describe('remove completed', function () {
-		it('devrait supprimer une entree terminee du modele', function () {
+		it('should remove a completed entry from the model', function () { // devrait supprimer une entree terminee du modele
 			let todo = {
 				id: 42,
 				title: 'my todo',
@@ -381,7 +363,7 @@ describe('controller', function () {
 			expect(model.remove).toHaveBeenCalledWith(42, jasmine.any(Function));
 		});
 
-		it('devrait supprimer une entree terminee de la vue', function () {
+		it('should remove a completed entry from the view', function () { // devrait supprimer une entree terminee de la vue
 			let todo = {
 				id: 42,
 				title: 'my todo',
@@ -397,7 +379,7 @@ describe('controller', function () {
 	});
 
 	describe('element complete toggle', function () {
-		it('devrait mettre A jour le modele', function () {
+		it('should update the model', function () { // devrait mettre A jour le modele
 			let todo = {
 				id: 21,
 				title: 'my todo',
@@ -416,7 +398,7 @@ describe('controller', function () {
 			}, jasmine.any(Function));
 		});
 
-		it('devrait mettre A jour la vue', function () {
+		it('should update the view', function () { // devrait mettre A jour la vue
 			let todo = {
 				id: 42,
 				title: 'my todo',
@@ -438,7 +420,7 @@ describe('controller', function () {
 	});
 
 	describe('edit item', function () {
-		it('devrait passer en mode edition', function () {
+		it('should switch to edit mode', function () { // devrait passer en mode edition
 			let todo = {
 				id: 21,
 				title: 'my todo',
@@ -458,7 +440,7 @@ describe('controller', function () {
 			});
 		});
 
-		it('devrait quitter le mode d edition sur termine', function () {
+		it('should leave edit mode on done', function () { // devrait quitter le mode d edition sur termine
 			let todo = {
 				id: 21,
 				title: 'my todo',
@@ -479,7 +461,7 @@ describe('controller', function () {
 			});
 		});
 
-		it('devrait persister les changements sur fait', function () {
+		it('should persist the changes on done', function () { // devrait persister les changements sur fait
 			let todo = {
 				id: 21,
 				title: 'my todo',
@@ -499,7 +481,7 @@ describe('controller', function () {
 			}, jasmine.any(Function));
 		});
 
-		it('devrait supprimer lelement du modele lors de la persistance d un titre vide', function () {
+		it('should remove the element from the model when persisting an empty title', function () { // devrait supprimer lelement du modele lors de la persistance d un titre vide
 			let todo = {
 				id: 21,
 				title: 'my todo',
@@ -517,7 +499,7 @@ describe('controller', function () {
 			expect(model.remove).toHaveBeenCalledWith(21, jasmine.any(Function));
 		});
 
-		it('devrait supprimer l element du modele lors de la persistance d un titre vide', function () {
+		it('should remove the element from the view when persisting an empty title', function () { // devrait supprimer l element du modele lors de la persistance d un titre vide
 			let todo = {
 				id: 21,
 				title: 'my todo',
@@ -535,7 +517,7 @@ describe('controller', function () {
 			expect(view.render).toHaveBeenCalledWith('removeItem', 21);
 		});
 
-		it('devrait quitter le mode d edition en cas d annulation', function () {
+		it('should leave edit mode on cancel', function () { // devrait quitter le mode d edition en cas d annulation
 			let todo = {
 				id: 21,
 				title: 'my todo',
@@ -555,7 +537,7 @@ describe('controller', function () {
 			});
 		});
 
-		it('ne doit pas persister les modifications lors de l annulation', function () {
+		it('should not persist the changes on cancel', function () { // ne doit pas persister les modifications lors de l annulation
 			let todo = {
 				id: 21,
 				title: 'my todo',
