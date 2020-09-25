@@ -3,9 +3,9 @@
 	'use strict';
 
 	/**
-	 * STORE Crée un nouvel objet Store côté client et créera un espace vide si aucun objet existe déja.
-	 * @param {string} name Le nom de la base de donnée à utiliser
-	 * @param {function} callback La fonction de rappel (seulement parce qu'on est en localStorage) utilisé après l'initialisation du Store. Dans le cas d'une vrai BDD, nous effecturions des appels AJAX.
+	 * STORE Creates a new client-side Store object and will create an empty space if no object already exists.
+	 * @param {string} name The name of the database to use
+	 * @param {function} callback The callback function (only because we are in localStorage) used after the Store initialization. In the case of a real DB, we would make AJAX calls.
 	 */
 	class Store {
 		constructor(name, callback) {
@@ -25,9 +25,9 @@
 		}
 
 		/**
-		 * Trouve un élément en fonction de la requête (objet JS)
-		 * @param {object} query La requête à comparer (par exemple {foo: 'bar'})
-		 * @param {function} callback La fonction de rappel à utiliser lorsque le traitement de la requête est terminé
+		 * Find an item based on the query (JS object)
+		 * @param {object} query The query to compare (for example {foo: 'bar'})
+		 * @param {function} callback The callback function to use when the request is finished processing
 		 * @example
 		 * db.find({foo: 'bar', hello: 'world'}, function (data) {
 		 *	 // data will return any items that have foo: bar and
@@ -52,8 +52,8 @@
 		};
 
 		/**
-		 * Trouve tous les éléments présent dans le stockage
-		 * @param {function} callback La fonction de rappel utilisée lorsque tous les éléments ont été trouvés
+		 * Find all the items in the storage
+		 * @param {function} callback The callback function used when all items were found
 		 */
 		findAll(callback) {
 			callback = callback || function () {};
@@ -61,10 +61,10 @@
 		};
 
 		/**
-		 * Sauvegarde les données dans la BDD. Si aucun élément n'existe, un nouveau élément sera créé, sinon une mise à jour des propriétés de l' élément existant sera réalisé
-		 * @param {object} updateData L'objet data à sauvegarder dans la BDD
-		 * @param {function} callback La fonction de rappel à utiliser après la sauvegarde
-		 * @param {number} id L'id de l'élément à sauvegarder (facultatif)
+		 * Save the data in the database. If no element exists, a new element will be created, otherwise an update of the properties of the existing element will be carried out.
+		 * @param {object} updateData The data object to save in the database
+		 * @param {function} callback The callback function to use after saving
+		 * @param {number} id The id of the element to save (optional)
 		 */
 		save(updateData, callback, id) {
 			let data = JSON.parse(localStorage[this._dbName]);
@@ -77,7 +77,7 @@
 			for (let i = 0; i < 6; i++) {
 				newId += charset.charAt(Math.floor(Math.random() * charset.length));
 			}
-			// Si un ID a été donné, recherchez l'élément et mettez à jour chaque propriété
+			// If an ID was given, find the item and update each property
 			if (id) {
 				for (let i = 0; i < todos.length; i++) {
 					if (todos[i].id === id) {
@@ -90,9 +90,9 @@
 				localStorage[this._dbName] = JSON.stringify(data);
 				callback.call(this, todos);
 			} else {
-				// Assigner un ID
+				// Assign ID
 				/**
-				 * Génére un identifiant unique
+				 * Generate a unique identifier
 				 * @see  https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/now
 				 * @example
 				 * returns {number} 1519326977765
@@ -106,9 +106,9 @@
 		};
 
 		/**
-		 * Supprime un élément du stockage en se basant sur son ID
-		 * @param {number} id L'id de l'élément à supprimer
-		 * @param {function} callback La fonction de rappel utilisée après la suppression
+		 * Removes an item from storage based on its ID
+		 * @param {number} id The id of the element to delete
+		 * @param {function} callback The callback function used after deletion
 		 */
 		remove(id, callback) {
 			let data = JSON.parse(localStorage[this._dbName]);
@@ -132,8 +132,8 @@
 		};
 
 		/**
-		 * Démarre un nouveau stockage
-		 * @param {function} callback La fonction de rappel utilisée après avoir envoyé les données
+		 * Starts a new storage
+		 * @param {function} callback The callback function used after sending the data
 		 */
 		drop(callback) {
 			let data = {
