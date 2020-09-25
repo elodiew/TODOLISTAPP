@@ -16,8 +16,8 @@ import '../assets/img/todo.png'
 	'use strict';
 
 	/**
-	 * Initialise une nouvelle liste de tâche.
-	 * @param {string} name Le nom de la nouvelle liste de tâches.
+	 * Initializes a new task list.
+	 * @param {string} name The name of the new task list.
 	 */
 	function Todo(name) {
 		this.storage = new app.Store(name);
