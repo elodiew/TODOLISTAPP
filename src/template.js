@@ -25,7 +25,7 @@
 	};
 
 	/**
-	 * TEMPLATE Définit le template utilisé pour afficher les tâches
+	 * TEMPLATE Defines the template used to display tasks
 	 * @constructor
 	 */
 	class Template {
@@ -40,16 +40,16 @@
 		}
 
 		/**
-		 * Crée un élément HTML et place le template dans l'application. 
-		 * Normalement, il est conseillé d'utiliser un moteur de template comme Mustache ou Handlebars.
-		 * Pour simplifier notre application, nous avons décidé de créer un template en vanilla JS.
-		 * @param {object} data L'objet contenant les informations à remplacer dans le template.
-		 * @returns {string} Chaîne HTML d'un élément <li> Le template HTML contenant l'élément
+		 * Creates an HTML element and places the template in the application.
+		 * Normally, it is advisable to use a template engine like Mustache or Handlebars.
+		 * To simplify our application, we decided to create a template in vanilla JS.
+		 * @param {object} data The object containing the information to replace in the template.
+		 * @returns {string} HTML string of an <li> element The HTML template containing the element
 		 * @example
 		 * view.show({
-		 * id: 1, // l'id de la tâche
-		 * title: "Hello World", // le titre de la tâche
-		 * completed: 0, // la tâche est par défaut non terminée
+		 * id: 1, // the task id
+		 * title: "Hello World", // this title of the task 
+		 * completed: 0, // the task is by default not completed
 		});
 		 */
 		show(data) {
@@ -78,9 +78,9 @@
 		};
 
 		/**
-		 * Affiche un compteur de tâches actives en bas à gauche de l'application
-		 * @param {number} activeTodos Le nombre de tâches actives
-		 * @returns {string} Chaîne contenant le nombre
+		 * Displays an active task counter at the bottom left of the application
+		 * @param {number} activeTodos The number of active tasks
+		 * @returns {string} String containing the number
 		 */
 		itemCounter(activeTodos) {
 			let plural = activeTodos === 1 ? '' : 's';
@@ -89,15 +89,15 @@
 		};
 
 		/** 
-		 * Affiche ou non le bouton "Clear Completed" (si pas de tâches terminées = pas de bouton)
-		 * @param  {Number} completedTodos Le nombre de tâche complétées
-		 * @returns {string} Chaîne contenant le nombre
+		 * Display or not the "Clear Completed" button (if no completed tasks = no button)
+		 * @param  {Number} completedTodos The number of completed tasks
+		 * @returns {string} String containing the number
 		 */
 		clearCompletedButton(completedTodos) {
 			if (completedTodos > 0) {
 				return 'Clear completed';
 			} else {
-				return ''; // RETURN itemCounterLa chaine de caractère contenant le texte du bouton.
+				return ''; // RETURN itemCounter The string containing the button text.
 			}
 		};
 	};
