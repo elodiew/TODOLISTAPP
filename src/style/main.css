@@ -48,6 +48,10 @@ a.navbar-brand {
     font-size: 30px;
 }
 
+.navbar {
+    margin-top: 25px;
+}
+
 .btn-outline-primary:hover {
     margin-right: 10px;
     color: white;
