@@ -98,12 +98,14 @@ describe('controller', function () {
 			// START TODO: write test 02 ****************************************/
 			let todo = {
 				title: 'todoTest',
-				completed: false
-			}; // créer un objet todo avec la propriété completed à false
+				completed: false // terminer
+			};
+			// créer un objet todo avec la propriété completed à false
+
 			setUpModel([todo]); // initialiser le modèle avec l'objet todo
 			subject.setView('#/active'); // initialiser la vue en affichant seulement les todos actives
 
-			// doit retourner true si le model trouve la todo testée (le paramètre completed)
+			// doit retourner true si le model trouve la todo testée (avec le paramètre completed)
 			expect(model.read).toHaveBeenCalledWith({
 				completed: false
 			}, jasmine.any(Function));
